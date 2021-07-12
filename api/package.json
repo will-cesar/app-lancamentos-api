@@ -1,23 +1,37 @@
 {
-   "name": "api",
+   "name": "api-lancamentos",
    "version": "0.0.1",
-   "description": "Awesome project developed with TypeORM.",
+   "description": "API do APP Lançamentos - v1",
+   "author": "William Cesar",
    "devDependencies": {
+      "@types/cors": "^2.8.12",
       "@types/express": "^4.17.13",
       "@types/node": "^8.0.29",
-      "nodemon": "^2.0.12",
+      "@types/swagger-jsdoc": "^6.0.1",
+      "@types/swagger-ui-express": "^4.1.3",
+      "@typescript-eslint/eslint-plugin": "^4.28.2",
+      "@typescript-eslint/parser": "^4.28.2",
+      "eslint": "^7.30.0",
+      "eslint-plugin-import-helpers": "^1.1.0",
       "ts-node": "3.3.0",
-      "typescript": "3.3.3333"
+      "ts-node-dev": "^1.1.8",
+      "tsconfig-paths": "^3.10.1",
+      "typescript": "^3.3.3333"
    },
    "dependencies": {
       "cors": "^2.8.5",
+      "dotenv": "^10.0.0",
       "express": "^4.17.1",
       "pg": "^8.4.0",
       "reflect-metadata": "^0.1.10",
+      "swagger-jsdoc": "^6.1.0",
+      "swagger-ui-express": "^4.1.6",
       "typeorm": "0.2.34"
    },
    "scripts": {
-      "dev": "nodemon --exec ts-node src/server.ts",
+      "dev": "ts-node-dev -r tsconfig-paths/register --respawn --ignore-watch node_modules src/server.ts",
+      "lint": "eslint ./src/ --ext .ts",
+      "lint:fix": "eslint ./src/ --ext .ts --fix",
       "start": "ts-node src/index.ts"
    }
 }

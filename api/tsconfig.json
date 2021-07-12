@@ -1,15 +1,24 @@
 {
    "compilerOptions": {
-      "lib": [
-         "es5",
-         "es6"
-      ],
-      "target": "es5",
+      "lib": ["es6"],
+      "target": "es2017",
       "module": "commonjs",
       "moduleResolution": "node",
       "outDir": "./build",
+      "rootDir": "./src",      
+      "sourceMap": true,
+      "typeRoots": [
+         "./node_modules/@types",
+         "./src/@types"
+      ],
+      "resolveJsonModule": true,
       "emitDecoratorMetadata": true,
       "experimentalDecorators": true,
-      "sourceMap": true
+      "paths": {
+         "@config/*": ["./src/config/*"],
+         "@controllers/*": ["./src/controllers/*"],
+         "@entity/*": ["./src/entity/*"]
+      },
+      "baseUrl": "."
    }
 }
