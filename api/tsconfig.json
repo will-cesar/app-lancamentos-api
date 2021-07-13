@@ -1,24 +1,29 @@
 {
    "compilerOptions": {
-      "lib": ["es6"],
-      "target": "es2017",
+      "allowJs": true,
+      "baseUrl": "./src",
+      "emitDecoratorMetadata": true,
+      "experimentalDecorators": true,
+      "lib": ["es6"],      
       "module": "commonjs",
       "moduleResolution": "node",
       "outDir": "./build",
-      "rootDir": "./src",      
+      "paths": {
+         "@config/*": ["./config/*"],
+         "@controllers/*": ["./controllers/*"],
+         "@entity/*": ["./entity/*"]
+      },
+      "removeComments": true,
+      "resolveJsonModule": true,  
+      "rootDir": "./",      
       "sourceMap": true,
+      "target": "es2017",
       "typeRoots": [
          "./node_modules/@types",
          "./src/@types"
-      ],
-      "resolveJsonModule": true,
-      "emitDecoratorMetadata": true,
-      "experimentalDecorators": true,
-      "paths": {
-         "@config/*": ["./src/config/*"],
-         "@controllers/*": ["./src/controllers/*"],
-         "@entity/*": ["./src/entity/*"]
-      },
-      "baseUrl": "."
-   }
+      ]
+   },
+   "exclude": [
+      "node_modules"
+   ]
 }

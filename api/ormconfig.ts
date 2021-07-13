@@ -6,27 +6,27 @@ const environment = {
   user: process.env.DEV_DB_USER || process.env.PROD_DB_USER
 };
 
-module.exports = {
-  "database": environment.database,
-  "host": environment.host,
-  "password": environment.password, 
-  "port": environment.port,
-  "username": environment.user,
-  "type": "postgres",
-  "cli": {
-    "entitiesDir": "src/entity",
-    "migrationsDir": "src/migration",
-    "subscribersDir": "src/subscriber"
+export default {
+  'database': environment.database,
+  'host': environment.host,
+  'password': environment.password, 
+  'port': environment.port,
+  'username': environment.user,
+  'type': 'postgres',
+  'cli': {
+    'entitiesDir': 'src/entity',
+    'migrationsDir': 'src/migration',
+    'subscribersDir': 'src/subscriber'
   },
-  "entities": [
-    "src/entity/**/*.ts"
+  'entities': [
+    'src/entity/**/*.ts'
   ],
-  "logging": false,
-  "migrations": [
-    "src/migration/**/*.ts"
+  'logging': false,
+  'migrations': [
+    'src/migration/**/*.ts'
   ],
-  "subscribers": [
-    "src/subscriber/**/*.ts"
+  'subscribers': [
+    'src/subscriber/**/*.ts'
   ],
-  "synchronize": true
+  'synchronize': true
 };

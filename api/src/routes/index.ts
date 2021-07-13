@@ -1,7 +1,7 @@
-import { Router } from "express";
+import { Router } from 'express';
 
-const routes = Router();  
- 
+const routes = Router();
+
 /**
  * @swagger
  * /test:
@@ -11,10 +11,10 @@ const routes = Router();
  *     tags: ['Test']
  *     responses:
  *       200:
- *         description: Test description 2              
+ *         description: Test description 2
  */
-routes.get("/test", (req, res) => {
-  return res.send({ message: "Teste" });
+routes.get('/test', (req, res) => {
+  return res.send({ message: 'Teste' });
 });
 
 export default routes;

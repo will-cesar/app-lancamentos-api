@@ -17,8 +17,10 @@
     "eslint-plugin-import-helpers"
   ],
   "rules": {
-    "comma-dangle": ["error", "never"],
-    "import-helpers/order-imports": [
+    "arrow-parens": ["error", "always"], // padroniza os parenteses nas arrow functions
+    "comma-dangle": ["error", "never"], // remove a vírgula da última propriedade de um objeto
+    "eol-last": ["error", "always"], // cria uma linha no final de cada arquivo
+    "import-helpers/order-imports": [ //organização das importações dentro dos arquivos
       "warn",
       {
         "newlinesBetween": "always",
@@ -30,17 +32,19 @@
         "alphabetize": { "order": "asc", "ignoreCase": true } 
       }
     ],
-    "indent": [
+    "indent": [ // identação de 2 espaços nos arquivos
       "error",
       2
     ],
-    "quotes": [
+    "no-multiple-empty-lines": ["error", { "max": 1, "maxEOF": 0 }], // apenas uma linha de espaço permitido
+    "object-curly-spacing": ["error", "always"], // espaço dentro dos objetos
+    "quotes": [ // chaves simples
       "error",
-      "double"
+      "single"
     ],
-    "semi": [
+    "semi": [ // ponto e vírgula no final
       "error",
       "always"
-    ]   
+    ]
   }
 }
