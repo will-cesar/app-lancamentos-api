@@ -14,7 +14,8 @@
   },
   "plugins": [
     "@typescript-eslint",
-    "eslint-plugin-import-helpers"
+    "eslint-plugin-import-helpers",
+    "sort-class-members"
   ],
   "rules": {
     "arrow-parens": ["error", "always"], // padroniza os parenteses nas arrow functions
@@ -45,6 +46,15 @@
     "semi": [ // ponto e vírgula no final
       "error",
       "always"
+    ],
+    "sort-class-members/sort-class-members": [ // ordenação dos métodos dentro da classe
+      2,
+			{
+				"order": [
+					{ "type": "method", "sort": "alphabetical" }
+				],
+				"accessorPairPositioning": "getThenSet"
+			}
     ]
   }
 }

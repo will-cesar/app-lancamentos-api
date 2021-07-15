@@ -3,10 +3,10 @@ services:
     db:
         image: 'postgres:latest'
         environment: 
-            POSTGRES_PASSWORD: db-api-lancamentos
-            POSTGRES_USER: db-api-lancamentos
-            POSTGRES_DB: api-lancamentos
+            POSTGRES_PASSWORD: ${DEV_DB_PASS}
+            POSTGRES_USER: ${DEV_DB_USER}
+            POSTGRES_DB: ${DEV_DB_NAME}
         volumes:
             - ./pgdata:/var/lib/postgresql/data
         ports: 
-            - '5432:5432'
+            - '${DEV_DB_PORT}:${DEV_DB_PORT}'

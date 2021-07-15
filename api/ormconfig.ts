@@ -1,5 +1,5 @@
 const environment = {
-  database: process.env.DEV_DB_DATABASE || process.env.PROD_DB_DATABASE,
+  database: process.env.DEV_DB_NAME || process.env.PROD_DB_DATABASE,
   host: process.env.DEV_DB_HOST || process.env.PROD_DB_HOST,
   password: process.env.DEV_DB_PASS || process.env.PROD_DB_PASS,
   port: process.env.DEV_DB_PORT || process.env.PROD_DB_PORT,

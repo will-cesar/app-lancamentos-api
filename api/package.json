@@ -12,6 +12,8 @@
       "@typescript-eslint/eslint-plugin": "^4.28.2",
       "@typescript-eslint/parser": "^4.28.2",
       "eslint": "^7.30.0",
+      "eslint-plugin-import-helpers": "^1.1.0",
+      "eslint-plugin-sort-class-members": "^1.11.0",
       "ts-node": "3.3.0",
       "ts-node-dev": "^1.1.8",
       "tsconfig-paths": "^3.10.1",
@@ -25,7 +27,8 @@
       "reflect-metadata": "^0.1.10",
       "swagger-jsdoc": "^6.1.0",
       "swagger-ui-express": "^4.1.6",
-      "typeorm": "0.2.34"
+      "typeorm": "0.2.34",
+      "uuid": "^8.3.2"
    },
    "scripts": {
       "dev": "ts-node-dev -r tsconfig-paths/register --respawn --ignore-watch node_modules src/server.ts",

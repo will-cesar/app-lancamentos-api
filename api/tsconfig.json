@@ -10,8 +10,9 @@
       "outDir": "./build",
       "paths": {
          "@config/*": ["./config/*"],
-         "@controllers/*": ["./controllers/*"],
-         "@entity/*": ["./entity/*"]
+         "@entities/*": ["./entities/*"],
+         "@modules/*": ["./modules/*"],
+         "@repositories/*": ["./repositories/*"]
       },
       "removeComments": true,
       "resolveJsonModule": true,  
