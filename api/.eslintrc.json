@@ -15,7 +15,8 @@
   "plugins": [
     "@typescript-eslint",
     "eslint-plugin-import-helpers",
-    "sort-class-members"
+    "sort-class-members",
+    "unused-imports"
   ],
   "rules": {
     "arrow-parens": ["error", "always"], // padroniza os parenteses nas arrow functions
@@ -38,6 +39,7 @@
       2
     ],
     "no-multiple-empty-lines": ["error", { "max": 1, "maxEOF": 0 }], // apenas uma linha de espaço permitido
+    "no-unused-vars": "off",
     "object-curly-spacing": ["error", "always"], // espaço dentro dos objetos
     "quotes": [ // chaves simples
       "error",
@@ -55,6 +57,11 @@
 				],
 				"accessorPairPositioning": "getThenSet"
 			}
-    ]
+    ],
+    "unused-imports/no-unused-imports": "error",
+		"unused-imports/no-unused-vars": [
+			"warn",
+			{ "vars": "all", "varsIgnorePattern": "^_", "args": "after-used", "argsIgnorePattern": "^_" }
+		]
   }
 }

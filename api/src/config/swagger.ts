@@ -1,4 +1,4 @@
-import * as swaggerJsDoc from 'swagger-jsdoc';
+import swaggerJsDoc from 'swagger-jsdoc';
 import { OAS3Options } from 'swagger-jsdoc';
 
 export const swaggerConfig: OAS3Options = {

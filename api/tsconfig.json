@@ -3,17 +3,12 @@
       "allowJs": true,
       "baseUrl": "./src",
       "emitDecoratorMetadata": true,
+      "esModuleInterop": true,
       "experimentalDecorators": true,
       "lib": ["es6"],      
       "module": "commonjs",
       "moduleResolution": "node",
       "outDir": "./build",
-      "paths": {
-         "@config/*": ["./config/*"],
-         "@entities/*": ["./entities/*"],
-         "@modules/*": ["./modules/*"],
-         "@repositories/*": ["./repositories/*"]
-      },
       "removeComments": true,
       "resolveJsonModule": true,  
       "rootDir": "./",      
