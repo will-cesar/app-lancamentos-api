@@ -1,8 +1,9 @@
+import { Exclude } from 'class-transformer';
 import { Entity, Column, PrimaryColumn, UpdateDateColumn, CreateDateColumn } from 'typeorm';
 import { v4 as uuid } from 'uuid';
 
-@Entity()
-export class User {  
+@Entity('users')
+class User {  
 
   @PrimaryColumn()
   readonly id: string;
@@ -16,6 +17,7 @@ export class User {
   @Column()
   firstName: string; 
 
+  @Exclude()
   @Column()
   hash: string;
 
@@ -27,6 +29,7 @@ export class User {
 
   _password: string;
 
+  @Exclude()
   @Column()
   salt: string;
 
@@ -39,3 +42,5 @@ export class User {
     }
   }
 } 
+
+export { User };

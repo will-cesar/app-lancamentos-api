@@ -1,4 +1,4 @@
-import { connectToDb } from 'config/db';
+import { connectToDb } from 'config/db'; 
 import { swaggerDocs } from 'config/swagger';
 import cors from 'cors';
 import 'reflect-metadata'; 
@@ -7,7 +7,7 @@ import 'express-async-errors';
 import swaggerUi from 'swagger-ui-express';
 
 import routes from './routes';
- 
+  
 const app = express();
 
 app.use(cors());

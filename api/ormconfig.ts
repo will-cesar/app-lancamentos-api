@@ -14,19 +14,11 @@ export default {
   'username': environment.user,
   'type': 'postgres',
   'cli': {
-    'entitiesDir': 'src/entity',
-    'migrationsDir': 'src/migration',
-    'subscribersDir': 'src/subscriber'
+    'entitiesDir': 'src/entities'
   },
   'entities': [
-    'src/entity/**/*.ts'
+    'src/entities/*.ts'
   ],
   'logging': false,
-  'migrations': [
-    'src/migration/**/*.ts'
-  ],
-  'subscribers': [
-    'src/subscriber/**/*.ts'
-  ],
   'synchronize': true
 };
