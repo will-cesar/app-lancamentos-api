@@ -1,13 +1,13 @@
-import { connectToDb } from 'config/db'; 
-import { swaggerDocs } from 'config/swagger';
+import connectToDb from 'config/db';
 import cors from 'cors';
-import 'reflect-metadata'; 
-import express, { NextFunction, Request, Response } from 'express';
-import 'express-async-errors';
+import 'reflect-metadata';  
+import express from 'express';  
+import 'express-async-errors';   
+import errorValidator from 'middlewares/error-validator';
+import routes from 'routes';
 import swaggerUi from 'swagger-ui-express';
+import swaggerDocs from 'swagger.json';
 
-import routes from './routes';
-  
 const app = express();
 
 app.use(cors());
@@ -18,20 +18,8 @@ connectToDb();
 
 app.use(routes);
 
-app.use((err: Error, request: Request, response: Response, next: NextFunction) => {
-  if (err instanceof Error) {
-    return response.status(400).json({ 
-      error: err.message,
-      statusCode: 400
-    });
-  }
-
-  return response.status(500).json({
-    status: 'error',
-    message: 'Internal Server Error'
-  });
-});
-
 app.use('/', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
+
+app.use(errorValidator);
 
 export default app;

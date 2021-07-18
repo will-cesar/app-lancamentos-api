@@ -23,7 +23,7 @@
     "comma-dangle": ["error", "never"], // remove a vírgula da última propriedade de um objeto
     "eol-last": ["error", "always"], // cria uma linha no final de cada arquivo
     "import-helpers/order-imports": [ //organização das importações dentro dos arquivos
-      "warn",
+      "error",
       {
         "newlinesBetween": "always",
         "groups": [

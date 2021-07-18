@@ -1,6 +1,6 @@
 import { createConnection } from 'typeorm';
 
-export const connectToDb = async (): Promise<void> => {
+const connectToDb = async (): Promise<void> => {
   const conection = await createConnection();
   console.log(`App connected to db ${conection.options.database}`);
 
@@ -9,3 +9,5 @@ export const connectToDb = async (): Promise<void> => {
     console.log('DB connection closed');
   });
 };
+
+export default connectToDb;

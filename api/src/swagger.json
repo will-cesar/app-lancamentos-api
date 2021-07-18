@@ -1,0 +1,166 @@
+{
+    "basePath": "/v1",
+    "openapi": "3.0.3",
+    "info": {
+        "contact": {
+          "email": "williamcesar.andrade@outlook.com"
+        },
+        "description": "The project APP Lançamentos consist in an personal economy administrator, dedicated at assistence in control of users expenses.",
+        "title": "API - APP Lançamentos",
+        "version": "0.0.1"
+    },
+    "servers": [
+        {
+          "description": "Development environment",
+          "url": "http://localhost:3000/v1"
+        },
+        {
+            "description": "Production environment",
+            "url": ""
+          }
+    ],
+    "tags": [
+        {
+            "name": "Users",
+            "description": "All operations about user"
+        }
+    ],
+    "paths": {
+        "/users": {
+            "get": {
+                "summary": "List all users.",
+                "description": "This route is responsible to list all users.",
+                "tags": ["Users"],
+                "consumes": ["application/json"],
+                "produces": ["application/json"],
+                "responses": {
+                    "200": {
+                        "description": "Success get all users!",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": { 
+                                        "$ref": "#/components/schemas/User"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Server error."
+                    }
+                }
+            },
+            "post": {
+                "summary": "Create new user.",
+                "description": "This route is responsible to create a new user.",
+                "tags": ["Users"],
+                "consumes": ["application/json"],
+                "produces": ["application/json"],
+                "responses": {
+                    "201": {
+                        "description": "The user was successfully created!",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/User"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request. Some data is invalid!"
+                    },
+                    "500": {
+                        "description": "Server error."
+                    }
+                },
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/User"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "ApiResponse": {
+                "type": "object",
+                "properties": {
+                    "data": {
+                        "description": "All data",
+                        "type": "any"
+                    },
+                    "message": {
+                        "description": "Message coming from request",
+                        "type": "string"
+                    },
+                    "statusCode": {
+                        "description": "Status code from request",
+                        "type": "number"
+                    },
+                    "success": {
+                        "description": "If the request is success or not",
+                        "type": "boolean"
+                    }
+                }
+            },
+            "User": {
+                "type": "object",
+                "required": ["email", "firstName", "lastName", "password"],
+                "properties": {
+                    "id": {
+                        "description": "The auto-generated id of user",
+                        "readOnly": true,
+                        "type": "string"
+                    },
+                    "createAt": {
+                        "description": "Creation date of user",
+                        "readOnly": true,
+                        "type": "string"
+                    },
+                    "email": {
+                        "description": "E-mail of user",
+                        "type": "string"
+                    },
+                    "firstName": {
+                        "description": "First name of user",
+                        "type": "string"
+                    },
+                    "isAdmin": {
+                        "default": false,
+                        "description": "Type of user",
+                        "type": "boolean"
+                    },
+                    "lastName": {
+                        "description": "Last name of user",
+                        "type": "string"
+                    },
+                    "password": {
+                        "description": "Password of user - The password must contain at least 8 characters, 1 uppercase character and 1 digit",
+                        "type": "string",
+                        "writeOnly": true
+                    },
+                    "updateAt": {
+                        "description": "Last update of user",
+                        "readOnly": true,
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    },
+    "securitySchemes": {
+        "bearerAuth": {
+            "type": "http",
+            "scheme": "bearer",
+            "bearerFormat": "JWT"
+        }
+    }
+}

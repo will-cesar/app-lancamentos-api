@@ -1,6 +1,6 @@
-import { StatusResponseEnum } from 'modules/enums/status-responses.enum';
+import { UserResponseMessageEnum } from 'enums/user-response-message.enum';
 
 export interface Validation {
-    status: StatusResponseEnum;
+    status: UserResponseMessageEnum;
     isValid: boolean;
 }

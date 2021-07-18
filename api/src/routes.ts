@@ -3,6 +3,8 @@ import usersRouter from 'modules/users/users.routes';
 
 const routes = Router();
 
-routes.use('/users', usersRouter);
+const prefix = 'v1';
+
+routes.use(`/${prefix}/users`, usersRouter);
 
 export default routes;
