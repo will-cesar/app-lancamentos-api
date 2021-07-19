@@ -1,0 +1,67 @@
+{
+  "env": {
+    "es2021": true,
+    "node": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "@typescript-eslint",
+    "eslint-plugin-import-helpers",
+    "sort-class-members",
+    "unused-imports"
+  ],
+  "rules": {
+    "arrow-parens": ["error", "always"], // padroniza os parenteses nas arrow functions
+    "comma-dangle": ["error", "never"], // remove a vírgula da última propriedade de um objeto
+    "eol-last": ["error", "always"], // cria uma linha no final de cada arquivo
+    "import-helpers/order-imports": [ //organização das importações dentro dos arquivos
+      "error",
+      {
+        "newlinesBetween": "always",
+        "groups": [
+          "/^(class-transformer|cors|crypto|email-validator|express|express-async-errors|node_modules|reflect-metadata|swagger-ui-express|typeorm|uuid)/",
+          "module",
+          ["parent", "sibling", "index"]
+        ],
+        "alphabetize": { "order": "asc", "ignoreCase": true } 
+      }
+    ],
+    "indent": [ // identação de 2 espaços nos arquivos
+      "error",
+      2
+    ],
+    "no-multiple-empty-lines": ["error", { "max": 1, "maxEOF": 0 }], // apenas uma linha de espaço permitido
+    "no-unused-vars": "off",
+    "object-curly-spacing": ["error", "always"], // espaço dentro dos objetos
+    "quotes": [ // chaves simples
+      "error",
+      "single"
+    ],
+    "semi": [ // ponto e vírgula no final
+      "error",
+      "always"
+    ],
+    "sort-class-members/sort-class-members": [ // ordenação dos métodos dentro da classe
+      2,
+			{
+				"order": [
+					{ "type": "method", "sort": "alphabetical" }
+				],
+				"accessorPairPositioning": "getThenSet"
+			}
+    ],
+    "unused-imports/no-unused-imports": "error", // remove importações não utilizadas
+		"unused-imports/no-unused-vars": [
+			"warn",
+			{ "vars": "all", "varsIgnorePattern": "^_", "args": "after-used", "argsIgnorePattern": "^_" }
+		]
+  }
+}

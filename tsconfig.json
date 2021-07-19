@@ -1,0 +1,37 @@
+{
+   "compilerOptions": {
+      "allowJs": true,
+      "baseUrl": ".",
+      "emitDecoratorMetadata": true,
+      "esModuleInterop": true,
+      "experimentalDecorators": true,
+      "lib": ["es6"],      
+      "module": "commonjs",
+      "moduleResolution": "node",
+      "outDir": "./build",
+      "paths": {
+         "@config/*": ["./src/config/*"],
+         "@controllers/*": ["./src/api/controllers/*"],
+         "@entities/*": ["./src/api/entities/*"],
+         "@enums/*": ["./src/api/enums/*"],
+         "@interfaces/*": ["./src/api/interfaces/*"],
+         "@middlewares/*": ["./src/api/middlewares/*"],
+         "@repositories/*": ["./src/api/repositories/*"],
+         "@routes/*": ["./src/api/routes/*"],
+         "@services/*": ["./src/api/services/*"],
+         "@validations/*": ["./src/api/validations/*"]
+      },
+      "removeComments": true,
+      "resolveJsonModule": true,  
+      "rootDir": "./",      
+      "sourceMap": true,
+      "target": "es2017",
+      "typeRoots": [
+         "./node_modules/@types",
+         "./src/@types"
+      ]
+   },
+   "exclude": [
+      "node_modules"
+   ]
+}
