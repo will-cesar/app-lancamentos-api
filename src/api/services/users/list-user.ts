@@ -9,8 +9,7 @@ export class ListUsersService {
   async execute(): Promise<SuccessResponse> {
     const usersRepositories = getCustomRepository(UsersRepositories);
     const users = await usersRepositories.find();
-
-    const usersToPain = classToPlain(users);
+    const usersToPain = await classToPlain(users);
 
     return new SuccessResponse(usersToPain, 'Ok');
   }

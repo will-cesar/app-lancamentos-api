@@ -5,10 +5,11 @@
       "emitDecoratorMetadata": true,
       "esModuleInterop": true,
       "experimentalDecorators": true,
+      "forceConsistentCasingInFileNames": true,
       "lib": ["es6"],      
       "module": "commonjs",
       "moduleResolution": "node",
-      "outDir": "./build",
+      "outDir": "./dist",
       "paths": {
          "@config/*": ["./src/config/*"],
          "@controllers/*": ["./src/api/controllers/*"],
@@ -19,19 +20,21 @@
          "@repositories/*": ["./src/api/repositories/*"],
          "@routes/*": ["./src/api/routes/*"],
          "@services/*": ["./src/api/services/*"],
+         "@shared/*": ["./src/api/shared/*"],
          "@validations/*": ["./src/api/validations/*"]
       },
       "removeComments": true,
       "resolveJsonModule": true,  
-      "rootDir": "./",      
+      "rootDir": "./src",      
+      "strict": false,
       "sourceMap": true,
-      "target": "es2017",
+      "target": "es5",
       "typeRoots": [
          "./node_modules/@types",
          "./src/@types"
       ]
    },
-   "exclude": [
-      "node_modules"
+   "include": [
+      "src"
    ]
 }

@@ -6,5 +6,7 @@ export enum UserResponseMessage {
     INVALID_USER = 'Invalid user',
     SUCCESS_CREATED = 'The user was successfully created!',
     USER_ALREADY_EXISTS = 'User already exists',
+    USER_NOT_FOUND = 'User not found',
+    UPDATE_SUCCESS = 'User successfully updated!',
     VALID = 'Ok'
 }
